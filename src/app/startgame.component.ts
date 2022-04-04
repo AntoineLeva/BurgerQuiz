@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {AbstractControl, FormControl, FormGroup} from '@angular/forms';
+import {Personnes} from './personnes';
+import { HttpClient } from '@angular/common/http';
+import {Question} from './models/question';
+import {map} from 'rxjs/operators';
+import {any} from 'codelyzer/util/function';
 
 @Component({
   selector: 'app-startgame',
@@ -8,17 +13,17 @@ import {AbstractControl, FormControl, FormGroup} from '@angular/forms';
     <form [formGroup]="formulaire">
       <div class="ligne">
         <mat-form-field>
-          <input matInput type="text" placeholder="Pseudo" formControlName="Pseudo">
+          <input matInput type="text" placeholder="Pseudo" formControlName="pseudo" required="required">
         </mat-form-field>
       </div>
       <div class="ligne">
         <mat-form-field>
-          <input matInput type="text" placeholder="Email" formControlName="Mail">
+          <input matInput type="text" placeholder="Email" formControlName="mail">
         </mat-form-field>
       </div>
       <div class="ligne">
         <mat-form-field>
-          <input matInput type="number" placeholder="Age" formControlName="Age">
+          <input matInput type="number" placeholder="Age" formControlName="age">
         </mat-form-field>
       </div>
       <div class="ligne">
@@ -43,21 +48,24 @@ import {AbstractControl, FormControl, FormGroup} from '@angular/forms';
   ]
 })
 export class StartgameComponent implements OnInit {
-
+  private url = 'https://equipe06.chez-wam.info:443/api/joueurs';
+  personne!: Personnes;
   formulaire = new FormGroup({
-    id: new FormControl(),
-    Pseudo: new FormControl(''),
-    Mail: new FormControl(''),
-    Age: new FormControl(18),
-
+    id: new FormControl(this.http.get(this.url,)),
+    pseudo: new FormControl(''),
+    mail: new FormControl(''),
+    age: new FormControl(18),
     temps: new FormControl(0),
     score: new FormControl(0),
     avatarUrl: new FormControl(''),
 
   });
-  constructor() { }
+  constructor(private http: HttpClient) { }
   onSubmit() {
     console.info(this.formulaire.value);
+    return this.http.post(this.url, this.formulaire);
+
+
   }
   ngOnInit(): void {
   }
