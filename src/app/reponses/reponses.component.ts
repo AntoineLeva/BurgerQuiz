@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import { from } from 'rxjs';
 import {Reponse} from "../models/reponse";
 
 @Component({
@@ -8,10 +9,15 @@ import {Reponse} from "../models/reponse";
 })
 export class ReponsesComponent implements OnInit {
   @Input() reponse: Reponse = <Reponse>{};
-
-  constructor() { }
+  
+  constructor() {}
 
   ngOnInit(): void {
   }
+
+  recupGoodAnswers(): void{
+    console.log(this.reponse.bonne_reponse);
+  }
+
 
 }
