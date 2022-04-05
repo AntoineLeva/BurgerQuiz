@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {AbstractControl, FormControl, FormGroup} from '@angular/forms';
 import {Personnes} from './personnes';
-import { HttpClient } from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Question} from './models/question';
 import {map} from 'rxjs/operators';
 import {any} from 'codelyzer/util/function';
@@ -51,7 +51,6 @@ export class StartgameComponent implements OnInit {
   private url = 'https://equipe06.chez-wam.info:443/api/joueurs';
   personne!: Personnes;
   formulaire = new FormGroup({
-    id: new FormControl(this.http.get(this.url,)),
     pseudo: new FormControl(''),
     mail: new FormControl(''),
     age: new FormControl(18),
@@ -62,10 +61,12 @@ export class StartgameComponent implements OnInit {
   });
   constructor(private http: HttpClient) { }
   onSubmit() {
+    const httpOptions = {
+      headers: new HttpHeaders({'accept': 'application/json', 'Content-Type': 'application/json', 'Prefer': 'return=representation'})
+    };
     console.info(this.formulaire.value);
-    return this.http.post(this.url, this.formulaire);
 
-
+    return this.http.post<any>(this.url, this.formulaire, httpOptions);
   }
   ngOnInit(): void {
   }
