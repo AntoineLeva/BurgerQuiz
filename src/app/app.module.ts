@@ -8,11 +8,17 @@ import { QuestionsComponent } from './questions/questions.component';
 import { ReponsesComponent } from './reponses/reponses.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatCardModule} from "@angular/material/card";
-import {HttpClientModule} from "@angular/common/http";
-import {MatGridListModule} from "@angular/material/grid-list";
-import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
-import { ChoixComponent } from './choix/choix.component';
+import {MatCardModule} from '@angular/material/card';
+import {HttpClientModule} from '@angular/common/http';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { StartgameComponent } from './startgame.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatSelectModule} from '@angular/material/select';
+import {MatOptionModule} from '@angular/material/core';
+import {ReactiveFormsModule} from '@angular/forms';
+import {MatIconModule} from '@angular/material/icon';
+import {ChoixComponent} from './choix/choix.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +27,8 @@ import { ChoixComponent } from './choix/choix.component';
     QuestionsComponent,
     ReponsesComponent,
     NotFoundComponent,
-    ChoixComponent
+    StartgameComponent,
+    ChoixComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,7 +37,14 @@ import { ChoixComponent } from './choix/choix.component';
     HttpClientModule,
     MatGridListModule,
     MatCardModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatOptionModule,
+    ReactiveFormsModule,s
+    MatIconModule
+    /*MatToolbarModule,
+    MatSlideToggleModule*/
   ],
   providers: [],
   bootstrap: [AppComponent]
