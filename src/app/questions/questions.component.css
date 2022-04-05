@@ -1,8 +1,11 @@
+@font-face {
+    font-family: Dimbo;
+    src: url('Dimbo Regular.ttf'); 
+  } 
+
 div{
-    height : 32%;
-    width : 32%;
-    margin-left: auto;
-    margin-right: auto;
+    font-family: Dimbo, sans-serif;
+    font-weight: bold;
 }
 
  
