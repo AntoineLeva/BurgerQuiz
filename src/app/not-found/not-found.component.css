@@ -16,5 +16,10 @@ h2{
     background-size: cover;
     font-size: 2rem;
     color: white; 
-    font-family: horseshoes, sans-serif;
+    font-family: Dimbo, sans-serif;
 }
+
+@font-face {
+    font-family: Dimbo;
+    src: url('Dimbo Regular.ttf'); 
+  } 
