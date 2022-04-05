@@ -7,6 +7,13 @@ import {Component} from '@angular/core';
 })
 export class AppComponent{
   title = 'BurgerQuizz';
+
+  francais = true;
+
+  translate(): void {
+    this.francais = !this.francais;
+    console.log(this.francais);
+}
   /*isDarkTheme = true;
 
   // tslint:disable-next-line:typedef
