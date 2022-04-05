@@ -23,6 +23,7 @@ import { SelOuPoivreComponent } from './sel_ou_poivre/sel-ou-poivre.component';
     ReponsesComponent,
     NotFoundComponent,
     SelOuPoivreComponent
+
   ],
   imports: [
     BrowserModule,
