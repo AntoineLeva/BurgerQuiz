@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-@Component({
+@Component({git
   selector: 'app-nuggets',
   template: `
       <mat-card [routerLink]="['/question/7']">
