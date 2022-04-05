@@ -10,7 +10,6 @@
 <mat-grid-list cols="3" rowHeight="2:1" *ngIf="!loading">
   <mat-grid-tile
     *ngFor="let reponse of reponses">
-    <app-reponses [reponse]="reponse"></app-reponses>
+    <app-reponses [reponse]="reponse" (click)="isGoodAnswers($event)"></app-reponses>
   </mat-grid-tile>
 </mat-grid-list>
-
