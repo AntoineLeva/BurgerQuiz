@@ -43,8 +43,6 @@ import {ChoixComponent} from './choix/choix.component';
     MatOptionModule,
     ReactiveFormsModule,
     MatIconModule
-    /*MatToolbarModule,
-    MatSlideToggleModule*/
   ],
   providers: [],
   bootstrap: [AppComponent]
