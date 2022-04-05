@@ -1,4 +1,4 @@
-mport {FormulaireqrComponent } from './formulaireqr.component';
+import {FormulaireqrComponent } from './formulaireqr.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
