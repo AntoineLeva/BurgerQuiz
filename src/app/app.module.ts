@@ -13,7 +13,7 @@ import {HttpClientModule} from "@angular/common/http";
 import {MatGridListModule} from "@angular/material/grid-list";
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 import {MatIconModule} from '@angular/material/icon';
-import { SelOuPoivreComponent } from './sel_ou_poivre/sel-ou-poivre.component';
+import { ChoixComponent } from './choix/choix.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +22,7 @@ import { SelOuPoivreComponent } from './sel_ou_poivre/sel-ou-poivre.component';
     QuestionsComponent,
     ReponsesComponent,
     NotFoundComponent,
-    SelOuPoivreComponent
+    ChoixComponent
 
   ],
   imports: [
