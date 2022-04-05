@@ -12,7 +12,8 @@ import {MatCardModule} from "@angular/material/card";
 import {HttpClientModule} from "@angular/common/http";
 import {MatGridListModule} from "@angular/material/grid-list";
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
-import { ChoixComponent } from './choix/choix.component';
+import {MatIconModule} from '@angular/material/icon';
+import { SelOuPoivreComponent } from './sel_ou_poivre/sel-ou-poivre.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ChoixComponent } from './choix/choix.component';
     QuestionsComponent,
     ReponsesComponent,
     NotFoundComponent,
-    ChoixComponent
+    SelOuPoivreComponent
+
   ],
   imports: [
     BrowserModule,
@@ -30,7 +32,8 @@ import { ChoixComponent } from './choix/choix.component';
     HttpClientModule,
     MatGridListModule,
     MatCardModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
