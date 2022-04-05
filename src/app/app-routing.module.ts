@@ -1,3 +1,4 @@
+import { FormulaireqrComponent } from './formulaireqr.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {DashboardComponent} from './dashboard/dashboard.component';
@@ -10,6 +11,7 @@ const routes: Routes = [
   {path: '', component: DashboardComponent},
   {path: 'question/:id', component: QuestionsComponent},
   {path: 'startGame', component: StartgameComponent},
+  {path: 'questionQR', component:FormulaireqrComponent},
   {path: 'jeu', component: ChoixComponent},
   {path: '**', component: NotFoundComponent},
 ];

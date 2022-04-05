@@ -6,6 +6,7 @@ import {logger} from 'codelyzer/util/logger';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Reponse} from '../models/reponse';
 import {ReponsesService} from '../services/reponses.service';
+import { interval } from 'rxjs';
 
 @Component({
   selector: 'app-questions',
@@ -16,6 +17,7 @@ export class QuestionsComponent implements OnInit {
   question: Question = {} as Question;
   reponses: Reponse[] = [];
   loading = false;
+  data=0;
   private goodPoint = 0;
 
   constructor(private router: Router, private questionsService: QuestionsService, private route: ActivatedRoute, private reponsesService: ReponsesService) { }
@@ -29,6 +31,11 @@ export class QuestionsComponent implements OnInit {
         this.reponses = reponses;
         this.loading = false;
       });
+    });
+    const obs$ = interval(1000);
+    obs$.subscribe((d) => {
+      console.log(d);
+      this.data = d;
     });
 
   }
