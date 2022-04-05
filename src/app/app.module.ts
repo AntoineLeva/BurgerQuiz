@@ -13,6 +13,7 @@ import {HttpClientModule} from "@angular/common/http";
 import {MatGridListModule} from "@angular/material/grid-list";
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 import {MatIconModule} from '@angular/material/icon';
+import { SelOuPoivreComponent } from './sel_ou_poivre/sel-ou-poivre.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import {MatIconModule} from '@angular/material/icon';
     DashboardComponent,
     QuestionsComponent,
     ReponsesComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    SelOuPoivreComponent
   ],
   imports: [
     BrowserModule,
