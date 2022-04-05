@@ -17,6 +17,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
 import {MatOptionModule} from '@angular/material/core';
 import {ReactiveFormsModule} from '@angular/forms';
+import {MatIconModule} from '@angular/material/icon';
+import {ChoixComponent} from './choix/choix.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import {ReactiveFormsModule} from '@angular/forms';
     QuestionsComponent,
     ReponsesComponent,
     NotFoundComponent,
-    StartgameComponent
+    StartgameComponent,
+    ChoixComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,7 +41,10 @@ import {ReactiveFormsModule} from '@angular/forms';
     MatFormFieldModule,
     MatSelectModule,
     MatOptionModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,s
+    MatIconModule
+    /*MatToolbarModule,
+    MatSlideToggleModule*/
   ],
   providers: [],
   bootstrap: [AppComponent]
