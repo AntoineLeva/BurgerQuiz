@@ -9,7 +9,7 @@ const routes: Routes = [
   {path: '', component: DashboardComponent},
   {path: 'question/:id', component: QuestionsComponent},
   {path: 'jeu', component: ChoixComponent},
-  {path: '**', component: NotFoundComponent}
+  {path: '**', component: NotFoundComponent},
 ];
 
 @NgModule({
