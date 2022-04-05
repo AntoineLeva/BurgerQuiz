@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import {Observable} from "rxjs";
-import {Question} from "../models/question";
-import {QuestionsService} from "../services/questions.service";
-import {logger} from "codelyzer/util/logger";
-import {ActivatedRoute} from "@angular/router";
-import {Reponse} from "../models/reponse";
-import {ReponsesService} from "../services/reponses.service";
+import {Observable} from 'rxjs';
+import {Question} from '../models/question';
+import {QuestionsService} from '../services/questions.service';
+import {logger} from 'codelyzer/util/logger';
+import {ActivatedRoute} from '@angular/router';
+import {Reponse} from '../models/reponse';
+import {ReponsesService} from '../services/reponses.service';
 
 @Component({
   selector: 'app-questions',
@@ -13,9 +13,9 @@ import {ReponsesService} from "../services/reponses.service";
   styleUrls: ['./questions.component.css']
 })
 export class QuestionsComponent implements OnInit {
-  question: Question = <Question>{};
+  question: Question = {} as Question;
   reponses: Reponse[] = [];
-  loading: boolean = false;
+  loading = false;
 
   constructor(private questionsService: QuestionsService, private route: ActivatedRoute, private reponsesService: ReponsesService) { }
 

@@ -13,6 +13,7 @@ import {HttpClientModule} from "@angular/common/http";
 import {MatGridListModule} from "@angular/material/grid-list";
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 import {MatIconModule} from '@angular/material/icon';
+import { NuggetsComponent } from './nuggets/nuggets.component';
 import { SelOuPoivreComponent } from './sel_ou_poivre/sel-ou-poivre.component';
 
 @NgModule({
@@ -22,8 +23,8 @@ import { SelOuPoivreComponent } from './sel_ou_poivre/sel-ou-poivre.component';
     QuestionsComponent,
     ReponsesComponent,
     NotFoundComponent,
+    NuggetsComponent,
     SelOuPoivreComponent
-
   ],
   imports: [
     BrowserModule,
@@ -34,6 +35,8 @@ import { SelOuPoivreComponent } from './sel_ou_poivre/sel-ou-poivre.component';
     MatCardModule,
     MatProgressSpinnerModule,
     MatIconModule
+    /*MatToolbarModule,
+    MatSlideToggleModule*/
   ],
   providers: [],
   bootstrap: [AppComponent]
