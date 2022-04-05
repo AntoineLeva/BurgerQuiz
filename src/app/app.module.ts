@@ -8,13 +8,12 @@ import { QuestionsComponent } from './questions/questions.component';
 import { ReponsesComponent } from './reponses/reponses.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatCardModule} from "@angular/material/card";
-import {HttpClientModule} from "@angular/common/http";
-import {MatGridListModule} from "@angular/material/grid-list";
-import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
+import {MatCardModule} from '@angular/material/card';
+import {HttpClientModule} from '@angular/common/http';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatIconModule} from '@angular/material/icon';
-import { NuggetsComponent } from './nuggets/nuggets.component';
-import { SelOuPoivreComponent } from './sel_ou_poivre/sel-ou-poivre.component';
+import {ChoixComponent} from './choix/choix.component';
 
 @NgModule({
   declarations: [
@@ -23,8 +22,7 @@ import { SelOuPoivreComponent } from './sel_ou_poivre/sel-ou-poivre.component';
     QuestionsComponent,
     ReponsesComponent,
     NotFoundComponent,
-    NuggetsComponent,
-    SelOuPoivreComponent
+    ChoixComponent,
   ],
   imports: [
     BrowserModule,
