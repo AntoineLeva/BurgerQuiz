@@ -1,6 +1,7 @@
+import { HttpHeaders, HttpClient } from '@angular/common/http';
 import {Component, OnInit} from '@angular/core';
 import {AbstractControl, FormControl, FormGroup} from '@angular/forms';
-import { Question } from './models/question';
+import { Questionwithoutid } from './models/Questionwithoutid';
 import { Reponse } from './models/reponse';
 
 
@@ -14,14 +15,16 @@ import { Reponse } from './models/reponse';
             <input matInput type="text" placeholder="question" formControlName="question">
           </mat-form-field>
           <mat-form-field>
-          <input matInput type="number" placeholder="categorie" formControlName="categorie">
-        </mat-form-field>
+            <input matInput type="number" placeholder="categorie" formControlName="categorie">
+          </mat-form-field>
           <br>
           <mat-form-field>
+            Bonne Réponse :
             <input matInput type="text" placeholder="reponse 1" formControlName="reponse_1">
           </mat-form-field>
           <br>
           <mat-form-field>
+          Mauvaises Réponses :
             <input matInput type="text" placeholder="reponse 2" formControlName="reponse_2">
           </mat-form-field>    
           <br>     
@@ -30,8 +33,9 @@ import { Reponse } from './models/reponse';
           </mat-form-field>          
           <br>
           <mat-form-field>
-              <input matInput type="text" placeholder="reponse 4" formControlName="reponse_4">
+            <input matInput type="text" placeholder="reponse 4" formControlName="reponse_4">
           </mat-form-field>
+          <br>
         </div>
       </form>
     <form [formGroup]="formulaire" (ngSubmit)="onSubmit()">
@@ -47,29 +51,27 @@ styles: [
 })
 export class FormulaireqrComponent implements OnInit {
 
-  QuestionAdd!:Question[];
-  ReponseAdd!:Reponse;
-
+  questionAdd!:Questionwithoutid;
+  static  id: number=1000;
   formulaire = new FormGroup({
     question: new FormControl(''),
-    categorie: new FormControl(''),
-    reponse_1: new FormControl(''),
-    reponse_2: new FormControl(''),
-    reponse_3: new FormControl(''),
-    reponse_4: new FormControl('')
+    categorie: new FormControl('')
   });
-  constructor() {
+  constructor(private http:HttpClient){
+      
   }
 
   ngOnInit(): void {
   }
   onSubmit() {
-    
+    const httpOptions = {
+      headers: new HttpHeaders({'accept': 'application/json', 'Content-Type': 'application/json', 'Prefer': 'return=representation'})
+    };
+    //https://equipe06.chez-wam.info/api/questions
     //console.info(this.formulaire.value);
-    this.QuestionAdd[0].libelle=this.formulaire.get('question')!.value;
-   console.info(this.QuestionAdd[0].libelle);  
-   this.QuestionAdd[0].id_categorie=this.formulaire.get('categorie')!.value;;
-
+   this.questionAdd = {libelle: this.formulaire.get('question')!.value,  id_catetgorie: 2, id_theme: 3, explicit: false ,fun_fact: '' };
+   console.info(this.questionAdd);
+   this.http.post<any>('https://equipe06.chez-wam.info:443/api/questions', this.questionAdd, httpOptions).subscribe(rep =>console.log(rep));
   }
 
   requetageId(){
