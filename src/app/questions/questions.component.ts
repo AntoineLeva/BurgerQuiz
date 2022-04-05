@@ -16,7 +16,7 @@ export class QuestionsComponent implements OnInit {
   question: Question = <Question>{};
   reponses: Reponse[] = [];
   loading: boolean = false;
-  private static goodPoint: number =0;
+  private goodPoint: number =0;
 
   constructor(private router: Router,private questionsService: QuestionsService, private route: ActivatedRoute, private reponsesService: ReponsesService) { }
 
@@ -35,9 +35,9 @@ export class QuestionsComponent implements OnInit {
 
   isGoodAnswers(reponse:Reponse){
     if(reponse.bonne_reponse){
-      QuestionsComponent.goodPoint += 1;
+      this.goodPoint += 1;
     }
-    console.log(QuestionsComponent.goodPoint);  
+    console.log(this.goodPoint);
     let id = +(this.route.snapshot.paramMap.get('id') || 0);
     this.questionsService.getQuestion(id+1).subscribe(question => {
       this.question = question;
