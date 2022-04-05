@@ -41,7 +41,7 @@ import {ChoixComponent} from './choix/choix.component';
     MatFormFieldModule,
     MatSelectModule,
     MatOptionModule,
-    ReactiveFormsModule,s
+    ReactiveFormsModule,
     MatIconModule
     /*MatToolbarModule,
     MatSlideToggleModule*/
