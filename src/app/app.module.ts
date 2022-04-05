@@ -12,6 +12,11 @@ import {MatCardModule} from '@angular/material/card';
 import {HttpClientModule} from '@angular/common/http';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { StartgameComponent } from './startgame.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatSelectModule} from '@angular/material/select';
+import {MatOptionModule} from '@angular/material/core';
+import {ReactiveFormsModule} from '@angular/forms';
 import {MatIconModule} from '@angular/material/icon';
 import {ChoixComponent} from './choix/choix.component';
 
@@ -22,6 +27,7 @@ import {ChoixComponent} from './choix/choix.component';
     QuestionsComponent,
     ReponsesComponent,
     NotFoundComponent,
+    StartgameComponent,
     ChoixComponent,
   ],
   imports: [
@@ -32,6 +38,10 @@ import {ChoixComponent} from './choix/choix.component';
     MatGridListModule,
     MatCardModule,
     MatProgressSpinnerModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatOptionModule,
+    ReactiveFormsModule,s
     MatIconModule
     /*MatToolbarModule,
     MatSlideToggleModule*/
